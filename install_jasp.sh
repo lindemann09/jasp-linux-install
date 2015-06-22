@@ -7,17 +7,17 @@
 #
 # (c) 2015 Oliver Lindemann, MIT license
 
-VERSION="0.6.6"
-DISTRI="U1410"
+VERSION="0.7-Beta2"
+DISTRI="U1504"
 
-JASP="JASP-$VERSION-$DISTRI"
-SOURCEZIP="$JASP.zip"
+JASP="JASP-$VERSION"
+SOURCEZIP="$JASP-${DISTRI}.zip"
 URL="https://static.jasp-stats.org/$SOURCEZIP"
 DEST="/opt"
 TMP="/tmp"
 
-# dependencies
-sudo apt-get install libboost-dbg libqt5webkit5 liblapack3 libblas-common libarchive13 libqt5svg5 # download
+# install dependencies
+sudo apt-get install libboost-dbg libqt5webkit5 liblapack3 libblas-common libarchive13 libqt5svg 
 
 #download zip
 echo "Downloading $SOURCEZIP"
@@ -26,8 +26,9 @@ wget -P $TMP $URL
 
 # install
 cd $TMP
-unzip $TMP/$SOURCEZIP
+sudo rm -rf $JASP
 sudo rm -rf $DEST/$JASP
+unzip $TMP/$SOURCEZIP
 sudo mv -f $JASP $DEST
 sudo ln -fs $DEST/$JASP/JASP /usr/bin/jasp-$VERSION
 
