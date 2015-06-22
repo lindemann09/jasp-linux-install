@@ -17,8 +17,7 @@ DEST="/opt"
 TMP="/tmp"
 
 # dependencies
-sudo apt-get install libboost-dbg libqt5webkit5 liblapack3 libblas-common 
-libarchive13 qt5-default # download
+sudo apt-get install libboost-dbg libqt5webkit5 liblapack3 libblas-common libarchive13 libqt5svg # download
 
 #download zip
 echo "Downloading $SOURCEZIP"
