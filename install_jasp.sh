@@ -8,16 +8,41 @@
 # (c) 2015 Oliver Lindemann, MIT license
 
 VERSION="0.7-Beta2"
-DISTRI="U1504"
-
 JASP="JASP-$VERSION"
-SOURCEZIP="$JASP-${DISTRI}.zip"
-URL="https://static.jasp-stats.org/$SOURCEZIP"
 DEST="/opt"
 TMP="/tmp"
 
+# select distribution
+echo
+echo "Installing JASP $VERSION"
+echo "Select distribution, for which JASP should be installed:"
+echo "   1) Ubuntu 14.04 LTS (Trusty Tahr) 64-bit"
+echo "   2) Ubuntu 15.04 (Vivid Vervet) 64-bit"
+echo ""
+echo "   or type 'uninstall' to uninstall ALL JASP versions"
+echo ""
+echo -n "   >> "
+read selct
+if [ "$selct" = "1" ] ; then
+    DISTRI="U1404"
+elif [ "$selct" = "2" ] ; then
+    DISTRI="U1504" 
+elif [ "$selct" = "uninstall" ] ; then
+    rm -rf $DEST/JASP-*
+	rm -f /usr/bin/jasp-*
+	rm -f /usr/share/applications/jasp-*
+	echo "JASP has been uninstalled!"
+	exit
+else
+    echo "Installation quitted!"
+	exit
+fi
+
+SOURCEZIP="$JASP-${DISTRI}.zip"
+URL="https://static.jasp-stats.org/$SOURCEZIP"
+
 # install dependencies
-sudo apt-get install libboost-dbg libqt5webkit5 liblapack3 libblas-common libarchive13 libqt5svg 
+sudo apt-get install libboost-dbg libqt5webkit5 liblapack3 libblas-common libarchive13 libqt5svg5 
 
 #download zip
 echo "Downloading $SOURCEZIP"
