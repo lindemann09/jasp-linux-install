@@ -6,7 +6,7 @@ and execute it as sudo. Like this:
 
 ```
 wget -P /tmp https://raw.githubusercontent.com/lindemann09/jasp-linux-install/master/install_jasp.sh
-sudo sh /tmp/install_jasp.sh
+sudo bash /tmp/install_jasp.sh
 ```
 
 
