@@ -7,7 +7,7 @@
 #
 # (c) 2015 Oliver Lindemann, MIT license
 
-VERSION="0.7-Beta3"
+VERSION="0.7-Beta4"
 JASP="JASP-$VERSION"
 DEST="/opt"
 TMP="/tmp"
