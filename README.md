@@ -9,5 +9,7 @@ wget -P /tmp https://raw.githubusercontent.com/lindemann09/jasp-linux-install/ma
 sudo sh /tmp/install_jasp.sh
 ```
 
+see also http://lindemann09.github.io/jasp-linux-install/
+
 
 
